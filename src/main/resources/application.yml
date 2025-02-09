@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Email-Sender
+  mail:
+    host: smtp-relay.brevo.com
+    port: 587
+    username: 854621001@smtp-brevo.com
+    sender: socialmediaemail1711@gmail.com
+    password: mVjMJc4NLDPHwxAh
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
