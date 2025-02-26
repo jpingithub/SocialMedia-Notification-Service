@@ -14,10 +14,17 @@ spring:
           starttls:
             enable: true
             required: true
-
-eureka:
-   client:
+  rabbitmq:
+    addresses: amqps://ehzzfrui:666BNJl25PqRl0gFsZJMBa-8x6Y_zSbH@kebnekaise.lmq.cloudamqp.com/ehzzfrui
+  client:
      service-url:
        defaultZone: http://localhost:8761/eureka/
      fetch-registry: true
      register-with-eureka: true
+
+
+  messaging:
+    exchange: social-events-exchange
+    queue: queue
+    routing-key: event.binding
+
