@@ -2,11 +2,11 @@ spring:
   application:
     name: notification-service
   mail:
-    host: smtp-relay.brevo.com
-    port: 587
-    username: 854621001@smtp-brevo.com
-    sender: socialmediaemail1711@gmail.com
-    password: mVjMJc4NLDPHwxAh
+    host: ${SPRING_MAIL_HOST}
+    port: ${SPRING_MAIL_PORT}
+    username: ${SPRING_MAIL_USERNAME}
+    sender: ${SPRING_MAIL_SENDER}
+    password: ${SPRING_MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -15,16 +15,11 @@ spring:
             enable: true
             required: true
   rabbitmq:
-    addresses: amqps://ehzzfrui:666BNJl25PqRl0gFsZJMBa-8x6Y_zSbH@kebnekaise.lmq.cloudamqp.com/ehzzfrui
-  client:
-     service-url:
-       defaultZone: http://localhost:8761/eureka/
-     fetch-registry: true
-     register-with-eureka: true
+    addresses: ${SPRING_RABBITMQ_ADDRESSES}
 
 
   messaging:
-    exchange: social-events-exchange
-    queue: queue
-    routing-key: event.binding
+    exchange: ${SPRING_MESSAGING_EXCHANGE}
+    queue: ${SPRING_MESSAGING_QUEUE}
+    routing-key: ${SPRING_MESSAGING_ROUTING_KEY}
 
